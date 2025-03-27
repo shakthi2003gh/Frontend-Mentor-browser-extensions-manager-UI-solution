@@ -1,0 +1,62 @@
+@import url("./utilities/index.css");
+
+:root {
+  --clr-neutral-0: hsl(200, 60%, 99%);
+  --clr-neutral-100: hsl(0, 0%, 93%);
+  --clr-neutral-200: hsl(217, 61%, 90%);
+  --clr-neutral-300: hsl(0, 0%, 78%);
+  --clr-neutral-600: hsl(226, 11%, 37%);
+  --clr-neutral-700: hsl(225, 23%, 24%);
+  --clr-neutral-800: hsl(226, 25%, 17%);
+  --clr-neutral-900: hsl(227, 75%, 14%);
+
+  --clr-red-400: hsl(3, 86%, 64%);
+  --clr-red-500: hsl(3, 71%, 56%);
+  --clr-red-700: hsl(3, 77%, 44%);
+
+  --bg-light: linear-gradient(
+    180deg,
+    hsl(215, 74%, 95%) 0%,
+    hsl(185, 48%, 95%) 100%
+  );
+  --bg-dark: linear-gradient(
+    180deg,
+    hsl(225, 71%, 5%) 0%,
+    hsl(226, 75%, 14%) 100%
+  );
+
+  color-scheme: light;
+
+  --clr-primary: var(--clr-neutral-900);
+  --clr-text: var(--clr-neutral-600);
+  --bg: var(--bg-light);
+  --bg-secondary: var(--clr-neutral-0);
+}
+
+:root[theme="dark"] {
+  color-scheme: dark;
+
+  --clr-primary: var(--clr-neutral-0);
+  --clr-text: var(--clr-neutral-300);
+  --bg: var(--bg-dark);
+  --bg-secondary: var(--clr-neutral-800);
+}
+
+body {
+  max-width: 64em;
+  min-height: 100dvh;
+  color: var(--clr-text);
+  padding: 1em;
+  margin-inline: auto;
+  background: var(--bg) fixed;
+}
+
+.text--primary {
+  color: var(--clr-primary);
+}
+
+@media (min-width: 42.375em) and (orientation: landscape) {
+  body {
+    padding: 2.5em 1.5em;
+  }
+}
