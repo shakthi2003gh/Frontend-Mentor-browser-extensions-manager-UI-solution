@@ -1,0 +1,5 @@
+button {
+  outline-color: var(--clr-red-400);
+  outline-offset: 0.1875em;
+  cursor: pointer;
+}

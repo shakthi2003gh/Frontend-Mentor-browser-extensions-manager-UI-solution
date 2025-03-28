@@ -1,0 +1,91 @@
+header {
+  position: sticky;
+  top: 1em;
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  align-items: center;
+  padding: 0.625em;
+  animation: slide-from-top 0.5s;
+  background-color: var(--bg-secondary);
+  border-radius: 0.5em;
+  overflow: hidden;
+  z-index: 564;
+}
+
+[theme="light"] header {
+  box-shadow: 0 0.0625em 0.25em -0.0625em var(--clr-neutral-300);
+}
+
+header #LOGO {
+  display: grid;
+  width: 11.25em;
+  height: 2.5em;
+  color: var(--clr-primary);
+}
+
+header #LOGO svg {
+  width: 100%;
+  height: 100%;
+}
+
+header button.theme-btn {
+  display: grid;
+  place-content: center;
+  padding: 0.625em;
+  border: none;
+  background-color: var(--clr-neutral-100);
+  border-radius: 0.5em;
+}
+
+[theme="dark"] header .theme-btn {
+  background-color: var(--clr-neutral-700);
+}
+
+header .theme-btn svg {
+  animation: rotate 0.5s;
+}
+
+@media (hover: hover) {
+  header button.theme-btn:hover {
+    background-color: var(--clr-neutral-300);
+  }
+
+  [theme="dark"] header .theme-btn:hover {
+    background-color: var(--clr-neutral-600);
+  }
+}
+
+@media (min-width: 42.375em) and (orientation: landscape) {
+  header {
+    padding: 0.75em;
+    border-radius: 0.625em;
+  }
+
+  header #LOGO {
+    font-size: 1.2em;
+  }
+
+  header .theme-btn svg {
+    width: 1.625em;
+    height: 1.625em;
+  }
+}
+
+@keyframes slide-from-top {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    rotate: -180deg;
+  }
+}

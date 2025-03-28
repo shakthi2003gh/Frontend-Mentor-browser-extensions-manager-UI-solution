@@ -1,4 +1,6 @@
 @import url("./utilities/index.css");
+@import url("./components/index.css");
+@import url("./layouts/index.css");
 
 :root {
   --clr-neutral-0: hsl(200, 60%, 99%);
@@ -40,6 +42,14 @@
   --clr-text: var(--clr-neutral-300);
   --bg: var(--bg-dark);
   --bg-secondary: var(--clr-neutral-800);
+}
+
+html {
+  scroll-behavior: smooth;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
