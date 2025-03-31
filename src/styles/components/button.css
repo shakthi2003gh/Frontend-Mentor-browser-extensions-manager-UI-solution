@@ -1,5 +1,36 @@
 button {
-  outline-color: var(--clr-red-400);
-  outline-offset: 0.1875em;
+  text-transform: capitalize;
   cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 0.125em solid var(--clr-red-400);
+  outline-offset: 0.125em;
+}
+
+button.btn--primary {
+  padding: 0.5em 1em;
+  border: 0.0625em solid var(--clr-neutral-200);
+  color: var(--clr-primary);
+  background-color: var(--bg-secondary);
+  border-radius: 6.25em;
+}
+
+[theme="dark"] .btn--primary {
+  border-color: var(--clr-neutral-600);
+}
+
+button.btn--primary:focus-visible {
+  background-color: var(--clr-neutral-100);
+}
+
+[theme="dark"] .btn--primary:focus-visible {
+  background-color: var(--clr-neutral-600);
+}
+
+@media (hover: hover) {
+  button.btn--primary:hover {
+    color: var(--clr-neutral-0);
+    background-color: var(--clr-red-400);
+  }
 }
