@@ -1,0 +1,52 @@
+label.toggle {
+  position: relative;
+  display: flex;
+  width: 2.5em;
+  height: 1.4em;
+  padding: 0.15em;
+  background-color: var(--clr-neutral-300);
+  transition: background-color 0.25s;
+  border-radius: 6.25em;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+label.toggle:has(input:checked) {
+  background-color: var(--clr-red-500);
+}
+
+label.toggle:has(input:focus-visible) {
+  outline: 0.125em solid var(--clr-red-400);
+  outline-offset: 0.125em;
+}
+
+[theme="dark"] label.toggle {
+  background-color: var(--clr-neutral-600);
+}
+
+label.toggle span {
+  display: inline-block;
+  aspect-ratio: 1;
+  background-color: var(--clr-neutral-0);
+  border-radius: 6.25em;
+}
+
+label.toggle:has(input:checked) span {
+  margin-left: auto;
+}
+
+.toggle input {
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+@media (hover: hover) {
+  label.toggle:has(input:checked):hover {
+    background-color: var(--clr-red-700);
+  }
+
+  [theme="light"] label.toggle:has(input:checked):hover {
+    background-color: var(--clr-red-400);
+  }
+}
