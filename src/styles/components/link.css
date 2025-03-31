@@ -1,0 +1,38 @@
+.link {
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border: 0.0625em solid var(--clr-border);
+  background-color: var(--clr-neutral-0);
+  border-radius: 6.25em;
+}
+
+.link:focus-visible {
+  outline: 0.125em solid var(--clr-red-400);
+  outline-offset: 0.125em;
+}
+
+[theme="dark"] .link {
+  background-color: var(--clr-neutral-700);
+}
+
+.link.active {
+  color: var(--clr-neutral-0);
+  background-color: var(--clr-red-400);
+  border-color: transparent;
+}
+
+[theme="dark"] .link.active {
+  color: var(--clr-neutral-900);
+}
+
+@media (hover: hover) {
+  .link:not(.active):hover {
+    opacity: 0.7;
+  }
+
+  [theme="dark"] .link:not(.active):hover {
+    background-color: var(--clr-neutral-600);
+    opacity: 1;
+  }
+}
