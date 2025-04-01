@@ -1,0 +1,37 @@
+ul.extensions-list {
+  display: grid;
+  gap: 0.5em;
+  list-style: none;
+  padding: 0;
+  margin: 1.5em 0;
+}
+
+ul.extensions-list .extension__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+@media (min-width: 375px) {
+  ul.extensions-list {
+    --col: auto-fit;
+
+    grid-template-columns: repeat(var(--col), minmax(18.75em, 1fr));
+  }
+}
+
+@media (min-width: 42.375em) and (orientation: landscape) {
+  ul.extensions-list {
+    --col: 2;
+
+    gap: 1em;
+  }
+}
+
+@media (min-width: 64em) and (orientation: landscape) {
+  ul.extensions-list {
+    --col: 3;
+  }
+}

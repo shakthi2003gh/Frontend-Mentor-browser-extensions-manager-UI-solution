@@ -1,4 +1,33 @@
+import generateId from "../utilities/generateId.js";
+
 const dataKey = "fmbe-data";
+
+export async function fetchAndSetData() {
+  return fetch("/public/data.json")
+    .then((res) => res.json())
+    .then((data) => {
+      data = data.map((data) => {
+        data.id = generateId();
+        return data;
+      });
+
+      localStorage.setItem(dataKey, JSON.stringify(data));
+      return data;
+    })
+    .catch((err) => {
+      console.error(err);
+
+      localStorage.setItem(dataKey, []);
+      return [];
+    });
+}
+
+export async function getData() {
+  const data = JSON.parse(localStorage.getItem(dataKey));
+  if (!data) return fetchAndSetData();
+
+  return new Promise((resolve) => resolve(data));
+}
 
 export function toggleActive(id) {
   const data = JSON.parse(localStorage.getItem(dataKey));

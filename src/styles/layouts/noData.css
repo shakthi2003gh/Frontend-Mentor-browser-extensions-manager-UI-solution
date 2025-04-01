@@ -1,0 +1,20 @@
+body:has(.no-data) {
+  display: flex;
+  flex-direction: column;
+}
+
+body:has(.no-data) main {
+  flex-grow: 1;
+  align-content: center;
+  margin-block: 0;
+}
+
+.no-data {
+  text-align: center;
+  height: 100%;
+  animation: reveal 1s;
+}
+
+.no-data button {
+  margin-top: 1.5em;
+}

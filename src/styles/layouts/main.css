@@ -21,6 +21,12 @@ main .filters {
   gap: 0.5em;
 }
 
+main .alert {
+  text-align: center;
+  margin-top: 3em;
+  animation: reveal 1s;
+}
+
 @media (min-width: 42.375em) and (orientation: landscape) {
   main {
     margin-top: 3em;
