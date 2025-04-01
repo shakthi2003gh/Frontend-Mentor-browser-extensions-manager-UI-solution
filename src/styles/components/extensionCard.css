@@ -1,0 +1,64 @@
+.extension__card {
+  --delay: 0s;
+
+  padding: 1em;
+  animation: slide-from-bottom calc(0.5s + var(--delay));
+  border: 0.0625em solid var(--clr-border);
+  background-color: var(--bg-secondary);
+  border-radius: 1em;
+}
+
+.extension__card .main {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.extension__card .icon {
+  flex-shrink: 0;
+  width: 3.125em;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.extension__card .icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.extension__card h2 {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin: 0;
+}
+
+.extension__card .description {
+  font-size: 0.8em;
+  line-height: 2.5ch;
+  width: 90%;
+  margin-block: 0.7em;
+  color: var(--clr-text);
+}
+
+.extension__card .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.extension__card .footer:is(button, .toggle) {
+  flex-shrink: 0;
+}
+
+@keyframes slide-from-bottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
