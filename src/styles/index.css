@@ -31,6 +31,7 @@
 
   --clr-primary: var(--clr-neutral-900);
   --clr-text: var(--clr-neutral-600);
+  --clr-border: var(--clr-neutral-200);
   --bg: var(--bg-light);
   --bg-secondary: var(--clr-neutral-0);
 }
@@ -40,6 +41,7 @@
 
   --clr-primary: var(--clr-neutral-0);
   --clr-text: var(--clr-neutral-300);
+  --clr-border: var(--clr-neutral-600);
   --bg: var(--bg-dark);
   --bg-secondary: var(--clr-neutral-800);
 }
@@ -53,12 +55,32 @@ html {
 }
 
 body {
-  max-width: 64em;
+  position: relative;
+  max-width: 76.25em;
   min-height: 100dvh;
   color: var(--clr-text);
   padding: 1em;
   margin-inline: auto;
   background: var(--bg) fixed;
+}
+
+body::after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 12.5em;
+  background: linear-gradient(180deg, hsl(215, 74%, 95%) 70%, transparent);
+}
+
+[theme="dark"] body::after {
+  background: linear-gradient(
+    180deg,
+    hsl(225, 71%, 5%) 40%,
+    hsl(224, 73%, 7%) 70%,
+    transparent
+  );
 }
 
 .text--primary {
@@ -68,5 +90,9 @@ body {
 @media (min-width: 42.375em) and (orientation: landscape) {
   body {
     padding: 2.5em 1.5em;
+  }
+
+  body::after {
+    height: 13.125em;
   }
 }
